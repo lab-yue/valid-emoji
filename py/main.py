@@ -5,11 +5,10 @@ dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, "../emoji.txt")
 
 with open(filename) as f:
-    source = f.read()
+    [_, *emojis] = f.read().split('\n')
 
 as_script = []
 no_error = []
-[_, *emojis] = source.split('\n')
 
 for emoji in emojis:
     try:
